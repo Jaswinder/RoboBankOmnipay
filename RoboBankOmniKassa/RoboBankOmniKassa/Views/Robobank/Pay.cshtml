@@ -1,0 +1,21 @@
+﻿@model RoboBankOmniKassa.Models.RobobankViewModel
+
+@{
+    ViewBag.Title = "Pay";
+}
+
+<h2>Pay</h2>
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.LabelFor(item => item.Amount)
+    @Html.EditorFor(item => item.Amount)
+
+    @Html.LabelFor(item => item.OrderID)
+    @Html.EditorFor(item => item.OrderID)
+    
+    <input type="submit" value="Save" class="btn btn-default csg_buttonBlue" id="Savedata" />
+
+}
